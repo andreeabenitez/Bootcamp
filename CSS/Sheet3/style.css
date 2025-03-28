@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid white;
+}
+header.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+header nav a {
+  margin-right: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+header .signup {
+  padding: 10px 20px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+.hero {
+  text-align: center;
+  padding: 50px whitesmoke;
+}
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.hero .cta {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.value-proposition {
+  text-align: center;
+  padding: 50px 20px;
+}
+.value-proposition h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.value-proposition p {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  width: 300px;
+  background-color: black;
+  color: white;
+  text-align: ;
+  padding: 20px;
+}
+.card p {
+  margin: 20px 0;
+}
+.card a {
+  color: white;
+  text-decoration: underline;
+}
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+footer .columns {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+footer .columns div {
+  text-align: left;
+}
+footer p {
+  font-size: 14px;
+  color: #666;
+}
