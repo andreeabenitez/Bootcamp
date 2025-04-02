@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex08</title>
+    <script>
+      const persona = {
+        nombre: "Ana",
+        edad: 30,
+        ciudad: "Madrid",
+      };
+      console.log(persona.nombre, persona.edad, persona.ciudad);
+      console.log(persona);
+
+      function describirPersona(persona) {
+        return `Nombre: ${persona.nombre}, Edad: ${persona.edad}, Ciudad: ${persona.ciudad}`;
+      }
+      console.log(describirPersona(persona));
+    </script>
+  </head>
+  <body>
+    <p>Abre la consola para ver los resultados.</p>
+  </body>
+</html>

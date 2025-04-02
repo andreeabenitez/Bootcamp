@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex07</title>
+    <script>
+      const diasSemana = [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábado",
+        "Domingo",
+      ];
+
+      for (let i = 0; i < diasSemana.length; i++) {
+        console.log(diasSemana[i]);
+      }
+
+      const arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function suma(arreglo) {
+        let suma = 0;
+        for (let i = 0; i < arreglo.length; i++) {
+          suma += arreglo[i];
+        }
+        return suma;
+      }
+      console.log(suma(arreglo));
+    </script>
+  </head>
+  <body>
+    <p>Abre la consola para ver los resultados.</p>
+  </body>
+</html>
