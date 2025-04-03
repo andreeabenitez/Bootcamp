@@ -4,25 +4,23 @@ body {
   margin: 0;
   padding: 0;
   background-color: yellow;
-  box-shadow: 0 4 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.oreja.izquierda {
-  position: absolute;
+
+.oreja {
+  position: fixed;
+  background-color: black;
   top: 0;
-  left: 0;
+  height: 50px;
+  width: 50px;
+}
+.oreja--izquierda {
   clip-path: polygon(0 0, 100% 0, 0 100%);
-  background-color: black;
-  width: 50px;
-  height: 50px;
+  left: 0;
 }
-.oreja.derecha {
-  position: absolute;
-  top: 0;
-  right: 0;
+.oreja--derecha {
   clip-path: polygon(0 0, 100% 0, 100% 100%);
-  background-color: black;
-  width: 50px;
-  height: 50px;
+  right: 0;
 }
 
 :root {
@@ -38,14 +36,14 @@ body {
   position: fixed;
 }
 
-.moflete.izquierda {
+.moflete--izquierda {
   bottom: calc(var(--tamanio-mofletes) * -0.5);
   left: calc(var(--tamanio-mofletes) * -0.5);
 }
 
-.moflete.derecha {
-  bottom: calc(var(--tamanio-mofletes) * -0.4);
-  right: calc(var(--tamanio-mofletes) * -0.4);
+.moflete--derecha {
+  bottom: calc(var(--tamanio-mofletes) * -0.5);
+  right: calc(var(--tamanio-mofletes) * -0.5);
 }
 
 header {
@@ -60,45 +58,47 @@ header input {
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 4 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.pokemon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.poke-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
   padding: 10px;
   padding-left: 140px;
   padding-right: 140px;
 }
 
-.pokemon-card {
+.poke__card {
   background-color: #f5f5f5;
-  box-shadow: 0 2px 5px rgba;
-  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 200px;
-  height: 280px;
   margin: 0;
 }
 
-.pokemon-image {
+.poke__image {
   background-color: lightgray;
-  margin: 0, 0, 0, 0;
+  margin: 0;
+  position: relative;
 }
-.pokemon-id {
-  width: 60px;
-  align-items: left;
+.poke__id {
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  padding: 0.25em;
+  position: absolute;
   background-color: #ccc;
   color: #853716;
 }
 
-.pokemon-card img {
-  width: 100px;
+.poke__card .poke__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.pokemon-info {
+.poke__info {
   text-align: left;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -106,7 +106,7 @@ header input {
   margin-left: 10px;
 }
 
-footer.evolucion {
+footer.evolution {
   border-left: 4px solid #853716;
   margin-left: 5px;
   padding-left: 5px;
@@ -116,15 +116,16 @@ footer.evolucion {
   margin-bottom: 0px;
 }
 
-footer.evolucion .p2 {
-  font-size: 16px;
+footer.evolution .evolution__name {
+  font-size: 20px;
   color: #000;
   margin-top: -15px;
 }
 
-.pokemon-info h2 {
+.poke__info h1 {
   padding-bottom: 0px;
-  padding-top: 0px;
+  padding-top: 10px;
+  padding-left: 1px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
@@ -134,10 +135,11 @@ footer.evolucion .p2 {
   border-style: solid;
   border-width: 1px;
   color: #853716;
-  padding: 5px 10px;
+  padding: 0.35em;
   border-radius: 5px;
   font-size: 10px;
   text-decoration: none;
+  display: ;
 }
 
 @media only screen and (max-width: 381px) {
