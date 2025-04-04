@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14</title>
+    <script>
+      const aleatorio = Math.floor(Math.random() * 100) + 1;
+      function Adivinar() {
+        const input = document.getElementById("input").value;
+        if (input == aleatorio) {
+          alert("¡Correcto!");
+        } else if (input > aleatorio) {
+          alert("El número es menor");
+        } else {
+          alert("El número es mayor");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="input" />
+    <button onclick="Adivinar()">Adivinar</button>
+    <p id="resultado"></p>
+  </body>
+</html>

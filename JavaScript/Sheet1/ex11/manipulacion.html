@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11</title>
+    <script>
+      function agregarElemento() {
+        const inputValue = document.getElementById("texto").value.trim();
+        if (inputValue === "") {
+          alert("El texto no puede estar vacío");
+        } else {
+          const nuevoElemento = document.createElement("li");
+          nuevoElemento.textContent = inputValue;
+
+          const lista = document.querySelector("ul");
+          lista.appendChild(nuevoElemento);
+
+          document.getElementById("texto").value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="texto" placeholder="Escribe algo aquí" />
+    <button onclick="agregarElemento()">Añadir elemento</button>
+    <ul>
+      <li>uno</li>
+      <li>dos</li>
+      <li>tres</li>
+      <li>cuatro</li>
+    </ul>
+  </body>
+</html>

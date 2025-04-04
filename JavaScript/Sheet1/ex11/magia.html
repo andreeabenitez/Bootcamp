@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11</title>
+    <script>
+      // Cambia el color de fondo al pasar el ratón
+      function cambiarColor() {
+        document.getElementById("miDiv").style.backgroundColor = "lightgreen";
+      }
+
+      // Restablece el color de fondo al retirar el ratón
+      function restablecerColor() {
+        document.getElementById("miDiv").style.backgroundColor = "lightblue";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Magia</h1>
+    <div
+      id="miDiv"
+      onmouseover="cambiarColor()"
+      onmouseout="restablecerColor()"
+    >
+      Pasa el ratón por aquí
+    </div>
+  </body>
+</html>
