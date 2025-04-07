@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronómetro</title>
+    <script>
+      let intervalo;
+      let segundos = 0;
+
+      function Iniciar() {
+        if (!intervalo) {
+          intervalo = setInterval(() => {
+            segundos++;
+            document.getElementById("contador").textContent =
+              segundos + " segundos";
+          }, 1000);
+        }
+      }
+
+      function Detener() {
+        clearInterval(intervalo);
+        intervalo = null;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Cronómetro</h1>
+    <p id="contador">0 segundos</p>
+    <button onclick="Iniciar()">Iniciar</button>
+    <button onclick="Detener()">Detener</button>
+  </body>
+</html>
