@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 5</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const formulario = document.getElementById("formulario");
+        const nombreInput = document.getElementById("nombre");
+        const errorElement = document.getElementById("error");
+
+        formulario.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const nombre = nombreInput.value.trim();
+
+          if (nombre === "") {
+            errorElement.textContent = "Por favor, rellena el campo";
+            errorElement.style.display = "block";
+          } else {
+            errorElement.style.display = "none";
+            alert("Hola " + nombre);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form id="formulario">
+      <input type="text" id="nombre" placeholder="Ingresa tu nombre" />
+      <button type="submit">Enviar</button>
+      <p id="error" style="display: none; color: red"></p>
+    </form>
+  </body>
+</html>
