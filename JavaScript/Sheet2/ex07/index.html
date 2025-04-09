@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function contarVocales(texto) {
+        return texto
+          .split("")
+          .filter((caracter) => "aeiouAEIOU".includes(caracter)).length;
+      }
+
+      const texto = "Hola Mundo";
+      console.log(contarVocales(texto));
+    </script>
+  </head>
+  <body></body>
+</html>

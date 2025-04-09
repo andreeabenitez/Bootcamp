@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function esPalindromo(texto) {
+        return texto.split("").reverse().join("") === texto;
+      }
+
+      const texto = "A man, a plan, a canal, Panama";
+      console.log(esPalindromo(texto));
+      console.log(esPalindromo("Hola mundo"));
+    </script>
+  </head>
+  <body></body>
+</html>

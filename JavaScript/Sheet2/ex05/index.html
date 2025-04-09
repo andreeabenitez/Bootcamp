@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4</title>
+    <title>Document</title>
     <script>
-      function sumarNumeros(numeros) {
-        return numeros.reduce(function (acumulador, valorActual) {
-          return acumulador + valorActual;
-        });
+      function encontrarMaximo(numeros) {
+        return Math.max(...numeros);
       }
+
       const numeros = [1, 2, 3, 4, 5];
-      console.log(sumarNumeros(numeros));
+      console.log(encontrarMaximo(numeros));
     </script>
-    <style></style>
   </head>
   <body></body>
 </html>

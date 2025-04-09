@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const addButton = document.getElementById("btnAdd");
+        const removeButton = document.getElementById("btnRemove");
+        const ul = document.getElementById("ul1");
+
+        addButton.addEventListener("click", function () {
+          const newLi = document.createElement("li");
+          newLi.textContent = "Elemento nuevo";
+          ul.appendChild(newLi);
+        });
+
+        removeButton.addEventListener("click", function () {
+          const lastLi = ul.lastElementChild;
+          if (lastLi) {
+            ul.removeChild(lastLi);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="ul1">
+      <li><button id="btnAdd">Agregar elemento</button></li>
+      <li><button id="btnRemove">Eliminar último elemento</button></li>
+    </ul>
+  </body>
+</html>
