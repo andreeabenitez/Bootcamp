@@ -12,16 +12,23 @@
           }, ms);
         });
       }
+
       function obtenerPerfil(usuario) {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
           setTimeout(() => {
-            resolve({ nombre: "Ana", rol: "admin" });
+            if (Math.random() > 0.5) {
+              resolve({ nombre: "Ana", rol: "admin" });
+            } else {
+              reject("Error al obtener el perfil");
+            }
           }, 1000);
         });
       }
+
       function mostrarDashboard(perfil) {
         console.log(`Bienvenida, ${perfil.nombre} (${perfil.rol})`);
       }
+
       loginUsuario(1000)
         .then((usuario) => {
           console.log(`Usuario autenticado: ${usuario}`);
@@ -29,6 +36,9 @@
         })
         .then((perfil) => {
           mostrarDashboard(perfil);
+        })
+        .catch((error) => {
+          console.error(`Algo salió mal: ${error}`);
         });
     </script>
   </head>

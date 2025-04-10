@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tareas = document.getElementById("tareas");
+        const tareasLi = tareas.getElementsByTagName("li");
+
+        for (let i = 0; i < tareasLi.length; i++) {
+          tareasLi[i].addEventListener("click", function () {
+            tareasLi[i].classList.add("Seleccionado");
+            tareasLi[i].classList.remove("error");
+          });
+        }
+      });
+    </script>
+    <style>
+      .Seleccionado {
+        background-color: #e6ffe6;
+        border: 2px solid green;
+        font-weight: bold;
+      }
+      .error {
+        background-color: #ffe6e6;
+        border: 2px solid red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul id="tareas">
+      <li>tarea 1</li>
+      <li>tarea 2</li>
+      <li>tarea 3</li>
+    </ul>
+  </body>
+</html>

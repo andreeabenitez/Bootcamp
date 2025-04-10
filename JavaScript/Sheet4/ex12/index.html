@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const div = document.querySelector("div");
+        const grandeButton = document.getElementById("grande");
+        const bordeButton = document.getElementById("borde");
+        const aplicarAmbasButton = document.getElementById("aplicarAmbas");
+
+        grandeButton.addEventListener("click", function () {
+          div.classList.toggle("grande");
+        });
+        bordeButton.addEventListener("click", function () {
+          div.classList.toggle("borde");
+        });
+        aplicarAmbasButton.addEventListener("click", function () {
+          div.classList.add("grande", "borde");
+        });
+      });
+    </script>
+    <style>
+      .grande {
+        font-size: large;
+      }
+      .borde {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>texto</div>
+    <button id="grande">Grande</button>
+    <button id="borde">Borde</button>
+    <button id="aplicarAmbas">Aplicar ambas</button>
+  </body>
+</html>

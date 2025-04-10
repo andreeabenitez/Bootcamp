@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("cambio");
+        const divs = document.querySelectorAll("div");
+        button.addEventListener("click", function () {
+          divs.forEach(function (div) {
+            div.classList.toggle("activo");
+          });
+        });
+      });
+    </script>
+    <style>
+      .activo {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>texto</div>
+    <div>texto1</div>
+    <div>texto2</div>
+    <button id="cambio">Cambiar todos</button>
+  </body>
+</html>

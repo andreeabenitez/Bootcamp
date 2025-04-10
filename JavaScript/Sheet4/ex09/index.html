@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .activo {
+        background-color: green;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cuadro = document.querySelector("div");
+        const activoButton = document.getElementById("activo");
+        const eliminarButton = document.getElementById("eliminar");
+
+        activoButton.addEventListener("click", function () {
+          cuadro.classList.add("activo");
+        });
+        eliminarButton.addEventListener("click", function () {
+          cuadro.classList.remove("activo");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>hola</div>
+    <button id="activo">Activo</button>
+    <button id="eliminar">Eliminar</button>
+  </body>
+</html>

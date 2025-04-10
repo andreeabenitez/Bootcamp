@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <script>
+      /* function cuentaRegresiva(ms) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("3");
+          }, ms);
+        })
+          .then((message) => {
+            console.log(message);
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                resolve("2");
+              }, ms);
+            });
+          })
+          .then((message) => {
+            console.log(message);
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                resolve("1");
+              }, ms);
+            });
+          })
+          .then((message) => {
+            console.log(message);
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                resolve("¡Despegue!");
+              }, ms);
+            });
+          })
+          .then((message) => {
+            console.log(message);
+          });
+      }
+      cuentaRegresiva(1000); */
+
+      function espera(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+      async function cuentaRegresiva(ms) {
+        console.log("3...");
+        await espera(ms);
+        console.log("2...");
+        await espera(ms);
+        console.log("1...");
+        await espera(ms);
+        console.log("¡Despegue!");
+      }
+
+      cuentaRegresiva(1000);
+    </script>
+  </head>
+  <body></body>
+</html>
