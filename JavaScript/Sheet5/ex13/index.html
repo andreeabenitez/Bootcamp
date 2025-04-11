@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Importación Dinámica</h1>
+    <button id="button">Cargar matemáticas</button>
+
+    <script>
+      const button = document.getElementById("button");
+
+      button.addEventListener("click", async () => {
+        try {
+          const mathUtils = await import("./../ex11/mathUtils.js");
+
+          const resultadoSuma = mathUtils.suma(10, 5);
+          const resultadoMultiplica = mathUtils.multiplica(10, 5);
+
+          console.log(`Resultado de la suma: ${resultadoSuma}`);
+          console.log(`Resultado de la multiplicación: ${resultadoMultiplica}`);
+        } catch (error) {
+          console.error("Error al cargar el módulo:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
