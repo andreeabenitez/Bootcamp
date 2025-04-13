@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+     class celular {
+      constructor(color, peso, resolPantalla, camara, Ram){
+     this.color = color;
+     this.peso = peso;
+     this.resolPantalla = resolPantalla;
+     this.camara = camara;
+     this.Ram = Ram;
+     this.encendido = false;
+      }
+    
+      presionarBotonEncendido() {
+        if (this.encendido == false) {
+          alert("prendido");
+        } else {
+          alert("apagado")
+        }
+      }
+      reiniciar() {
+        if (this.encendido == true) {
+          alert("reiniciando");
+        } else {
+          alert("apagado");
+        }
+      }
+
+      tomarFotos(){
+        alert("foto tomada");
+      }
+
+      grabar(){
+        alert("grabando");
+      }
+      mostrarInfo() {
+        return `
+        color: ${this.color}
+        Peso: ${this.peso}
+        Resolucion camara: ${this.camara}
+        Resolucion video: ${this.resolPantalla}
+        Ram: ${this.Ram}
+        `;
+      }
+    }
+
+
+    class celularMejorado extends celular {
+        constructor(color,peso,resolPantalla,camara,Ram, camLenta){
+        super (color,peso,resolPantalla,camara,Ram);
+        this.camLenta = camLenta;
+      }
+      mobileInfo(){
+        return this.mostrarInfo() + `Camara lenta: ${this.camLenta}`;
+      }
+  
+      grabarVideoLento(){
+        alert("Grabando en camara lenta");
+      }
+    }
+      
+     
+     celular1 = new celular("rojo", 150, 5, "full hd", "2GB");
+     celular2 = new celular("negro", 100, 5, "full hd", "2GB");
+     celular3 = new celular ("amarillo", 155, 5, "hd", "5GB");
+     celular4 = new celularMejorado ("rojo", 150, 5, "full hd", "5GB", "Si");
+    // celular1.presionarBotonEncendido();
+     //celular1.tomarFotos();
+     //celular1.grabar();
+     //celular1.presionarBotonEncendido();
+
+     document.write (`
+      ${celular1.mostrarInfo()}
+      ${celular2.mostrarInfo()}
+      ${celular3.mostrarInfo()}
+       ${celular4.mobileInfo()}
+     `);
+     
+    
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

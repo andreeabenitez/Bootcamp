@@ -5,23 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
-   let cantidad = prompt("Cuantos alumnos?");
-   let totalAlumnos = [];
 
-   for (i=0; i < cantidad; i++) {
-    totalAlumnos[i] = [prompt("Nombres de los alumnos" + (i+1)),0];
-   }
+   let cantidad = prompt("¿Cuántos alumnos?");
+    let totalAlumnos = [];
 
-   const tomarAsistencia = (nombre, p) => {
-    let presencia = prompt(nombre);
-    if (presencia == "p" || presencia == "P") {
-      totalAlumnos[i][1]++;
+    // Registrar los nombres de los alumnos
+    for (let i = 0; i < cantidad; i++) {
+      totalAlumnos[i] = [prompt("Nombre del alumno " + (i + 1)), 0];
     }
-   }
 
-   for (i=0; i<30; i++) {
-    totalAlumnos[i][1]
-   }
+    // Función para tomar asistencia
+    const tomarAsistencia = (nombre, indice) => {
+      let presencia = prompt(`¿${nombre} está presente? (p/P para presente)`);
+      if (presencia == "p" || presencia == "P") {
+        totalAlumnos[indice][1]++;
+      }
+    };
+
+    // Registrar asistencia durante 7 días
+    for (let dia = 0; dia < 7; dia++) {
+      for (let j = 0; j < totalAlumnos.length; j++) {
+        tomarAsistencia(totalAlumnos[j][0], j);
+      }
+    }
+
+    // Mostrar el total de asistencias
+    for (let j = 0; j < totalAlumnos.length; j++) {
+      document.write(
+        `Asistencia del alumno ${totalAlumnos[j][0]}: ${totalAlumnos[j][1]} presencias<br>`
+      );
+    }
+
 
 
 

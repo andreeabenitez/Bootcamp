@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+   let suma = (a, b) => parseInt(a) + parseInt(b);
+   // function suma(a,b) {
+   //   return a+b;
+    //}
+
+    let resta = (a, b) => parseInt(a) - parseInt(b);
+    let division = (a,b) => parseInt(a) / parseInt(b);
+    let multiplicacion = (a,b) => parseInt(a) * parseInt(b);
+
+    //console.log(suma(3, 5));  
+   // console.log(resta(3, 5));
+   // console.log(division(3, 5));
+   // console.log(multiplicacion(3, 5));
+
+    alert("Que operacion deseas realizar?");
+    let operacion = prompt("1: suma, 2: resta, 3: division, 4: multiplicacion");
+
+    if (operacion == 1)
+  {
+    let a = prompt("primer numero");
+    let b = prompt ("segundo numero");
+    resultado = suma (a,b);
+    console.log(resultado)
+  } else if (operacion == 2) {
+
+    let a = prompt("primer numero");
+    let b = prompt ("segundo numero");
+    resultado = resta (a,b);
+    console.log(resultado)
+  } else if (operacion == 3) {
+
+let a = prompt("primer numero");
+let b = prompt ("segundo numero");
+resultado = division (a,b);
+console.log(resultado)
+  } else if (operacion == 4) {
+
+let a = prompt("primer numero");
+let b = prompt ("segundo numero");
+resultado = multiplicacion (a,b);
+console.log(resultado)
+  } else {
+    alert("no se ha encontrado la operación")
+  }
+
+
+    </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -6,11 +6,12 @@
     <title>Usuarios y Posts</title>
   </head>
   <body>
-    <form id="formulario">
-    <input type="text" id="busqueda" placeholder="Buscar peliculas..."/>
+    <form id="formulario" role="search">
+      <label for="busqueda">Buscar peliculas</label>
+    <input type="search" id="busqueda" placeholder="Buscar peliculas..."/>
     <button type="submit">Buscar</button>
   </form>
-  <div id="resultado"></div>
+  <div id="resultados"></div>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

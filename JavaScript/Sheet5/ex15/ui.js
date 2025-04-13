@@ -1,5 +1,4 @@
 export function mostrarPeliculas(peliculas) {
-  console.log("Películas recibidas: ", peliculas);
   const resultados = document.getElementById("resultados");
   resultados.innerHTML = "";
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+class App {
+  constructor (descargas, puntuacion,peso){
+    this.descargas = descargas;
+    this.puntuacion = puntuacion;
+    this.peso = peso;
+    this.iniciada = false;
+    this.instalada = false;
+  }
+
+abrir() {
+  if (this.iniciada == false && this.instalada == true){
+  this.iniciada = true;
+alert("app iniciada")}
+} 
+
+cerrar() {
+  if (this.iniciada == true && this.instalada == true){
+  this.iniciada = false;
+alert("app cerrada")}
+} 
+
+instalar() {
+  if (this.instalada == false){
+  this.instalada = true;
+alert("app instalada")
+}
+} 
+
+desinstalar() {
+  if (this.instalada == true){
+  this.instalada = false;
+alert("app desinstalada")}
+} 
+
+appInfo(){
+  return `
+  descargas: ${this.descargas}
+  puntuacion: ${this.puntuacion}
+  peso: ${this.peso}
+`}
+}
+
+app = new App ("16.000", "4 estrellas", "900mb");
+app2 = new App ("26.000", "5 estrellas", "900mb");
+
+
+app.abrir();
+app.cerrar();
+//app.instalar();
+document.write (`
+  ${app.appInfo()}
+  ${app2.appInfo()}
+  `)
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
+
