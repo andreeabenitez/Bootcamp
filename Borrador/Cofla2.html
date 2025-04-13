@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+   let cantidad = prompt("Cuantos alumnos?");
+   let totalAlumnos = [];
+
+   for (i=0; i < cantidad; i++) {
+    totalAlumnos[i] = [prompt("Nombres de los alumnos" + (i+1)),0];
+   }
+
+   const tomarAsistencia = (nombre, p) => {
+    let presencia = prompt(nombre);
+    if (presencia == "p" || presencia == "P") {
+      totalAlumnos[i][1]++;
+    }
+   }
+
+   for (i=0; i<30; i++) {
+    totalAlumnos[i][1]
+   }
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+let free = false;
+const validarCliente = (time) => {
+  let edad = prompt ("Cual es tu edad?");
+  if (edad >= 18) {
+    if (time >= 2 && time < 7 && free == false) {
+  alert("Entra gratis, es la primera persona");
+  } else {
+    alert("Son mas de las 2:00 entra pagando");
+  } 
+} else {
+  alert("No entra");
+} 
+}
+
+validarCliente(18);
+validarCliente(2); //primera persona 2:00//
+validarCliente(20);
+validarCliente(21);
+validarCliente(22);
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

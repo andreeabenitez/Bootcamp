@@ -3,7 +3,10 @@ import { mostrarUsuarios, mostrarPosts } from "./ui.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const usuarios = await getUsuarios();
-  mostrarUsuarios(usuarios);
-  const posts = await getPostsByUserId();
-  mostrarPosts(posts);
-});
+  mostrarUsuarios(usuarios, async (usuarioId) => {
+    const posts = await getPostsByUserId(usuarioId);
+    mostrarPosts(posts);
+  }
+  );
+}
+);

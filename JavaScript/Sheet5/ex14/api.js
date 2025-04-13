@@ -10,7 +10,7 @@ export async function getUsuarios() {
 export async function getPostsByUserId(userId) {
   try {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/posts?userId=ID`
+      `https://jsonplaceholder.typicode.com/posts?userId=` + userId
     );
     const posts = await response.json();
     return posts;
