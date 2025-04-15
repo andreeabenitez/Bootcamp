@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+             const obtenerInformacion = (materia) => {
+              materias = {
+                  fisica: ["Perez", "Pedro", "Juan", "Luis"],
+                  quimica: ["Rodriguez", "Ana", "Maria", "Jose"],
+                  matematicas: ["Hernandez", "Cofla", "Juli", "Pablo"],
+                  programacion: ["Dalto", "Cofla", "Juli", "Pablo"],
+                  historia: ["Fernando", "Cofla", "Juli", "Pablo"]
+              }
+
+
+              if (materias[materia] !== undefined){
+                  return [materias[materia],materia];
+              } else {
+                  return "false"
+               }
+          }
+
+          const mostrarInformacion = (materia) => {
+          let informacion = obtenerInformacion(materia);
+
+          if (informacion !== false) {
+              let profesor = obtenerInformacion(materia)[0][0]
+              let alumnos = obtenerInformacion(materia)[0]; alumnos.shift();
+              document.write(El profesor de  ${informacion[1]} es ${profesor} Los alumnos son: ${alumnos});
+          }
+      }
+
+      const cantidadAlumnos = (alumnos) => {
+
+      }
+
+      mostrarInformacion("fisica");
+      mostrarInformacion("quimica");
+      mostrarInformacion("programacion");
+    </script>
+  </head>
+  <body></body>
+</html>
