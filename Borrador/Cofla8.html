@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+   const materias = {
+      fisica: [75,6,3,"fisica"],
+      quimica: [90,8,2,"quimica"],
+      matematicas: [100,7,1,"matematicas"],
+      programacion: [70,3,2,"programacion"],
+      historia: [75,4,1,"historia"]
+      }
+    const asistencia = () => {
+    for (materia in materias) {
+      let asistencias = materias[materia][0];
+      let promedio = materias [materia][1];
+      let trabajos = materias[materia][2];
+      console.log(materias[materia][3]);
+
+      if (asistencias >= 90) {
+        console.log("Aprobado");
+      } else {
+        console.log("Suspenso");
+
+      }
+      if (promedio >= 7) {
+        console.log("Aprobado");
+      } else {
+        console.log("Suspenso");
+      }
+      if (trabajos >= 3) {
+        console.log("Aprobado");
+      } else {
+        console.log("Suspenso");
+      }
+      if (asistencias >= 90 && promedio >= 7 && trabajos >= 3) {
+        console.log("Aprobado");
+      } else {
+        console.log("Suspenso");
+      }
+    }
+  }
+  asistencia();
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+const obtenerInformacion = () => {
+  return {
+    fisica: ["Perez", "Pedro", "Juan", "Luis"],
+    quimica: ["Rodriguez", "Ana", "Maria", "Jose"],
+    matematicas: ["Hernandez", "Cofla", "Juli", "Pablo"],
+    programacion: ["Dalto", "Cofla", "Juli", "Pablo", "Fernando", "Jose", "Luis", "Maria", "Ana", "Pedro", "Juan"],
+    historia: ["Fernando", "Cofla", "Juli", "Pablo"]
+  };
+};
+
+const inscribirAlumno = (alumno, materia) => {
+  let materias = obtenerInformacion();
+
+  if (materias[materia] !== undefined) {
+    let alumnosMateria = materias[materia];
+
+    if (alumnosMateria.length < 20) {
+      alumnosMateria.push(alumno);
+      alert(`Alumno ${alumno} inscrito en ${materia}.`);
+    } else {
+      alert(`No se puede inscribir a ${alumno} en ${materia}. La clase está llena.`);
+    }
+
+    return alumnosMateria;
+  } else {
+    alert(`La materia ${materia} no existe.`);
+    return [];
+  }
+};
+
+// Ejemplo de uso
+// Inscribe a Miguel en química
+document.write(inscribirAlumno("Miguel", "quimica"));
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
