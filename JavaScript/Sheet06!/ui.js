@@ -1,4 +1,4 @@
-export function mostrarPokemon(pokemon) {
+/* export function mostrarPokemon(pokemon) {
   const resultados = document.getElementById("resultados");
   resultados.innerHTML = "";
 
@@ -21,3 +21,4 @@ export function mostrarPokemon(pokemon) {
     resultados.appendChild(div);
   });
 }
+  */

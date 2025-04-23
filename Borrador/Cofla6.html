@@ -5,40 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-             const obtenerInformacion = (materia) => {
-              materias = {
-                  fisica: ["Perez", "Pedro", "Juan", "Luis"],
-                  quimica: ["Rodriguez", "Ana", "Maria", "Jose"],
-                  matematicas: ["Hernandez", "Cofla", "Juli", "Pablo"],
-                  programacion: ["Dalto", "Cofla", "Juli", "Pablo"],
-                  historia: ["Fernando", "Cofla", "Juli", "Pablo"]
-              }
+           const obtenerInformacion = (materia) => {
+  materias = {
+    fisica: ["Perez", "Pedro", "Juan", "Luis"],
+    quimica: ["Rodriguez", "Ana", "Maria", "Jose"],
+    matematicas: ["Hernandez", "Cofla", "Juli", "Pablo"],
+    programacion: ["Dalto", "Cofla", "Juli", "Pablo"],
+    historia: ["Fernando", "Cofla", "Juli", "Pablo"]
+  };
 
+  if (materias[materia] !== undefined) {
+    return [materias[materia], materia, materias];
+  } else {
+    return materias;
+  }
+};
 
-              if (materias[materia] !== undefined){
-                  return [materias[materia],materia];
-              } else {
-                  return "false"
-               }
-          }
+const mostrarInformacion = (materia) => {
+  let informacion = obtenerInformacion(materia);
 
-          const mostrarInformacion = (materia) => {
-          let informacion = obtenerInformacion(materia);
+  if (informacion !== false) {
+    let profesor = informacion[0][0];
+    let alumnos = informacion[0];
+    alumnos.shift();
+    document.write(`El profesor de ${informacion[1]} es ${profesor}.<br>`);
+    document.write(`Los alumnos son: ${alumnos.join(", ")}.<br><br>`);
+  }
+};
 
-          if (informacion !== false) {
-              let profesor = obtenerInformacion(materia)[0][0]
-              let alumnos = obtenerInformacion(materia)[0]; alumnos.shift();
-              document.write(El profesor de  ${informacion[1]} es ${profesor} Los alumnos son: ${alumnos});
-          }
-      }
+const cantidadDeClase = (alumno) => {
+  let informacion = obtenerInformacion();
+  let clasesPresentes = [];
+  let cantidad = 0;
+  for (info in informacion) {
+    if (informacion[info].includes(alumno)) {
+      cantidad++;
+      clasesPresentes.push(" " + info);
+    }
+  }
+  return `${alumno} está inscrito en ${cantidad} clases: ${clasesPresentes} .<br>`;
+}
 
-      const cantidadAlumnos = (alumnos) => {
+mostrarInformacion("fisica");
+mostrarInformacion("quimica");
+mostrarInformacion("programacion");
 
-      }
+document.write(cantidadDeClase("Cofla"));
 
-      mostrarInformacion("fisica");
-      mostrarInformacion("quimica");
-      mostrarInformacion("programacion");
     </script>
   </head>
   <body></body>
