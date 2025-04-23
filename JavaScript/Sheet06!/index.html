@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokeapi</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
   </head>
   <body>
-    <h1>Pokeapi</h1>
+    <div class="oreja oreja--derecha"></div>
+    <div class="oreja oreja--izquierda"></div>
+    <div class="moflete moflete--izquierda"></div>
+    <div class="moflete moflete--derecha"></div>
+      <header>
+        <input type="search" placeholder="Filtra pokemons por nombre..." />
+      </header>
+    <div class="pokemon-container"></div>
+    <nav class="pagination" aria-label="...">
+      <ul class="pagination">
+        <li class="page-item" id="previous">
+          <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+        <li class="page-item" id="next">
+          <a class="page-link" href="#">Siguiente</a>
+        </li>
+      </ul>
+    </nav>
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <script src="./main.js"></script>
   </body>
 </html>
