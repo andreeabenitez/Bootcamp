@@ -80,7 +80,8 @@ ORDER BY total_revenue DESC;
 10. Consultas con múltiples JOIN:
     Muestra los nombres de las películas y las fechas de alquiler para un
     cliente específico (combina film , rental y inventory ).
-    Nivel Avanzado: Consultas complejas
+
+    
 11. Subconsultas correlacionadas:
     Encuentra las películas que tienen más alquileres que la película
     promedio.
