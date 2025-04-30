@@ -1,3 +1,9 @@
+function removeChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 const pokemonContainer = document.querySelector(".pokemon-container");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
@@ -19,6 +25,41 @@ next.addEventListener("click", () => {
   fetchPokemons(offset, limit);
 });
 
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const query = searchInput.value.trim().toLowerCase();
+  if (!query) {
+    alert("Por favor, ingresa un nombre o ID de Pokémon.");
+    return;
+  }
+
+  removeChildNodes(pokemonContainer);
+  
+
+  fetch(`https://pokeapi.co/api/v2/pokemon/${query}`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Pokémon no encontrado");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      removeChildNodes(pokemonContainer);
+      createPokemon(data); 
+    })
+    .catch((error) => {
+      console.error(error);
+      removeChildNodes(pokemonContainer);
+      alert("No se encontró el Pokémon. Intenta nuevamente.");
+    });
+});
+
+
+
 function fetchPokemon(id) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     .then((res) => res.json())
@@ -28,9 +69,20 @@ function fetchPokemon(id) {
 }
 
 function fetchPokemons(offset, limit) {
-  for (let i = offset; i <= offset + limit; i++) {
-    fetchPokemon(i);
+  const promises = [];
+  for (let i = offset; i < offset + limit; i++) {
+    promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`).then((res) => res.json()));
   }
+
+  Promise.all(promises)
+    .then((results) => {
+      results.forEach((pokemon) => {
+        createPokemon(pokemon);
+      });
+    })
+    .catch((error) => {
+      console.error("Error al cargar los Pokémon:", error);
+    });
 }
 
 function createPokemon(pokemon) {
@@ -92,6 +144,7 @@ function createPokemon(pokemon) {
     }
   }
 }
+
 
 fetchPokemons(offset, limit);
 
