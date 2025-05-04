@@ -1,0 +1,90 @@
+CREATE TABLE disciplina (
+  ID_disciplina int NOT NULL AUTO_INCREMENT,
+  nombre varchar(50) NOT NULL,
+  ID_entrenador int DEFAULT NULL,
+  ID_evento int DEFAULT NULL,
+  PRIMARY KEY (ID_disciplina),
+  KEY ID_entrenador_idx (ID_entrenador),
+  KEY ID_evento_idx (ID_evento),
+  CONSTRAINT ID_entrenador FOREIGN KEY (ID_entrenador) REFERENCES entrenador (ID_entrenador),
+  CONSTRAINT ID_evento FOREIGN KEY (ID_evento) REFERENCES evento (ID_evento)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE entrenador (
+  ID_entrenador int NOT NULL AUTO_INCREMENT,
+  nombre_completo varchar(100) NOT NULL,
+  experiencia_anios int NOT NULL,
+  especialidad varchar(45) DEFAULT NULL,
+  horario date DEFAULT NULL,
+  ID_disciplina int DEFAULT NULL,
+  PRIMARY KEY (ID_entrenador),
+  KEY ID_disciplina_idx (ID_disciplina),
+  CONSTRAINT ID_disciplina FOREIGN KEY (ID_disciplina) REFERENCES disciplina (ID_disciplina)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE evento (
+  ID_evento int NOT NULL AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  descripcion text,
+  ID_disciplina int NOT NULL,
+  fecha date NOT NULL,
+  hora time NOT NULL,
+  lugar varchar(100) DEFAULT NULL,
+  ID_miembros int DEFAULT NULL,
+  PRIMARY KEY (ID_evento),
+  KEY ID_disciplina (ID_disciplina),
+  KEY ID_miembros (ID_miembros),
+  CONSTRAINT ID_miembros FOREIGN KEY (ID_miembros) REFERENCES socio (ID_miembros)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE pago_cuota (
+  id int NOT NULL AUTO_INCREMENT,
+  ID_miembros int NOT NULL,
+  fecha date NOT NULL,
+  monto decimal(10,2) NOT NULL,
+  estado varchar(20) NOT NULL,
+  PRIMARY KEY (id),
+  KEY ID_miembros (ID_miembros),
+  CONSTRAINT ID_miembros2 FOREIGN KEY (ID_miembros) REFERENCES socio (ID_miembros)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE socio (
+  ID_miembros int NOT NULL AUTO_INCREMENT,
+  nombre_completo varchar(100) NOT NULL,
+  fecha_nacimiento date NOT NULL,
+  telefono varchar(20) DEFAULT NULL,
+  direccion varchar(100) DEFAULT NULL,
+  fecha_inscripcion date NOT NULL,
+  PRIMARY KEY (ID_miembros)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO socio (nombre_completo, fecha_nacimiento, telefono, direccion, fecha_inscripcion) VALUES
+('Juan Pérez', '1990-05-15', '123456789', 'Calle Falsa 123', '2023-01-15'),
+('María Gómez', '1985-07-20', '987654321', 'Avenida Siempre Viva 456', '2023-02-10'),
+('Carlos López', '1992-03-10', '456789123', 'Calle Luna 789', '2023-03-05'),
+('Ana Martínez', '1995-09-25', '789123456', 'Calle Sol 321', '2023-04-20'),
+('Luis Hernández', '1988-12-30', '321654987', 'Calle Estrella 654', '2023-05-01');
+
+INSERT INTO entrenador (nombre_completo, experiencia_anios, especialidad, horario, ID_disciplina) VALUES
+('Pedro Ramírez', 10, 'Fútbol', '2023-06-01', NULL),
+('Laura Fernández', 8, 'Natación', '2023-06-02', NULL),
+('Sofía Torres', 5, 'Tenis', '2023-06-03', NULL);
+
+INSERT INTO disciplina (nombre, ID_entrenador, ID_evento) VALUES
+('Fútbol', 1, NULL),
+('Natación', 2, NULL),
+('Tenis', 3, NULL);
+
+INSERT INTO evento (nombre, descripcion, ID_disciplina, fecha, hora, lugar, ID_miembros) VALUES
+('Torneo de Fútbol', 'Competencia de equipos de fútbol', 1, '2023-06-15', '10:00:00', 'Estadio Municipal', 1),
+('Competencia de Natación', 'Carrera de natación en piscina olímpica', 2, '2023-07-10', '15:00:00', 'Piscina Olímpica', 2);
+
+INSERT INTO pago_cuota (ID_miembros, fecha, monto, estado) VALUES
+(1, '2023-06-01', 50.00, 'pagado'),
+(2, '2023-06-05', 50.00, 'pagado'),
+(3, '2023-06-10', 50.00, 'pendiente'),
+(4, '2023-06-15', 50.00, 'pagado'),
+(5, '2023-06-20', 50.00, 'pendiente');
+
