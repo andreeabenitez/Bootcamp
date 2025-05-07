@@ -7,7 +7,7 @@ public class Numeros {
         int numero = (int) Math.random();
 
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt(); // 0
+        int n = 0;
 
         System.out.println("Adivine el número (entre 1 y 100): ");
 
