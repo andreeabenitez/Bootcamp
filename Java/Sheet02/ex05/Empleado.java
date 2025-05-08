@@ -1,6 +1,6 @@
 package Java.Sheet02.ex05;
 
-public class Empleado extends Persona {
+public class Empleado extends Persona implements Imprimible {
     private int salario;
 
     public Empleado (String nombre, int edad, int salario) {

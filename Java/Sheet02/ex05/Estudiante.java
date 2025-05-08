@@ -1,10 +1,7 @@
 package Java.Sheet02.ex05;
 
-public interface Imprimible {
-    void imprimir();
-}
 
-public class Estudiante extends Persona {
+public class Estudiante extends Persona implements Imprimible {
     private String grado;
 
     public Estudiante (String nombre, int edad, String grado) {

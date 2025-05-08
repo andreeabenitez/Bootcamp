@@ -4,10 +4,12 @@ package Java.Sheet02.ex06;
 public class Persona {
     private String nombre;
     private int edad;
+    private Direccion direccion;
 
-    public Persona(String nombre, int edad) {
+    public Persona(String nombre, int edad, Direccion direccion) {
         this.nombre = nombre;
         this.edad = edad;
+        this.direccion = direccion;
     }
 
     public void mostrarDetalles() {
