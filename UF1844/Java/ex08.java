@@ -1,4 +1,4 @@
-package Java.UF1844;
+package Java;
 
 public class ex08 {
     public static void main(String[] args) {
