@@ -1,4 +1,4 @@
-package Java;
+package UF1844.J;
 import java.util.Scanner;
 // Ej 3 Estructuras de control variadas
 public class ex03 {
