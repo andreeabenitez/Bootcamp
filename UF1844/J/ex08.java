@@ -1,8 +1,11 @@
 package UF1844.J;
 
+import java.util.Scanner;
+
 public class ex08 {
     public static void main(String[] args) {
         
+    Scanner scanner = new Scanner(System.in);
     System.out.println("Ingresa un número del 1 al 7");
         int p = scanner.nextInt();
         switch (p) {
@@ -29,7 +32,7 @@ public class ex08 {
                 break;
             default:
                 System.out.println("error");
-
         }
+        scanner.close();
     }
 }

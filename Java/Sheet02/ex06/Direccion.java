@@ -24,7 +24,7 @@ public class Direccion {
     public void setCiudad(String ciudad){
     this.ciudad = ciudad;
     }
-    public String getCodigo(){
+    public int getCodigo(){
         return codigo;
     }
     public void setCodigo(int codigo){

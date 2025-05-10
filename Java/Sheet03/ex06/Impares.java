@@ -1,7 +1,6 @@
 package Java.Sheet03.ex06;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 
 public class Impares {
