@@ -7,7 +7,7 @@ body {
  }
  .logo {
     width: 30%;
-    height: 30%;
+    height: auto;
     margin-right: 20px;
     
 } 
@@ -28,19 +28,19 @@ h1 {
     flex-direction: row;
     color: black;
     background-color: lightgrey;
-
-   
 }
 
 .menu ul {
     font-family: Arial, sans-serif;
-    background-color: yellow;
+    background-color: lightgray;
     display: flex;
     flex-direction: row;   
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
-    border-style: solid;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
   
 
 }
@@ -49,7 +49,15 @@ h1 {
 }
 .menu ul li a {
     text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    transition: color 0.3s;
  
+}
+
+.menu ul li a:hover {
+    background-color: darkblue;
+    color: white;
 }
 
 .imagen {
@@ -64,10 +72,12 @@ section {
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 section h2 {
     text-align: center;
+    margin-top: 10px;
 }
 
 section p {
@@ -89,7 +99,7 @@ section p {
 
     .logo {
     width: 20%;
-    height: 20%;
+    height: auto;
 
 }
   
