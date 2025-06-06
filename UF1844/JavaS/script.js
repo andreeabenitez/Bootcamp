@@ -37,7 +37,7 @@ function numMayor() {
   document.getElementById("resultadoo").textContent = "El número mayor es " + mayor;
 }
 
-// sort o bucle for//
+// sort o bucle for, buscar otra forma//
 
 function revCadena() {
     const input = document.getElementById("revertirCadena").value;
@@ -82,6 +82,8 @@ function palimdro() {
 
 }
 
+// buscar otra forma//
+
 function tablaMult() {
   const input = document.getElementById("multiplicar").value;
   const numero = Number(input.trim());
@@ -96,38 +98,185 @@ function tablaMult() {
     document.getElementById("resultadoMultiplicar").textContent = "Introduce un número válido.";
   }
 }
+// buscar otra forma//
+
 
 function calFactorial() {
   const input = document.getElementById("factoriar").value;
-  const numero = Number(input.trim());
+  const numero = paseInt(input);
   let resultado = 1;
-
-  if (!isNaN(numero) && numero >= 0 && Number.isInteger(numero)) {
-    for (let i = 1; i <= numero; i++) {
+  
+  for (let i = 1; i <= numero; i++) {
       resultado *= i;
-    }
-    document.getElementById("calcularFactorial").textContent = "El factorial de " + numero + " es: " + resultado;
-  } else {
-    document.getElementById("calcularFactorial").textContent = "Introduce un número entero positivo.";
   }
+    document.getElementById("calcularFactorial").textContent = "El factorial de " + numero + " es: " + resultado;
 }
 
-function contarPalabras(){
+/* recursividad 
+function funFactorial(n) {
+  
+  if (n == 0)    {
+  return 1;
+  } else {
+  return n * funFactorial(n - 1);
+}
+
+function (calFactorial) {
+const input = document.getElementById("factoriar").value;
+const numero = paseInt(input);
+document.getElementById("calcularFactorial").textContent = funFactorial(numero);
+
+
+}
+
+
+*/
+
+function contarPalabras() {
   const input = document.getElementById("contar").value;
-  const palabras = input.trim().split(/\s+/);
-  const cantidad = input.trim() === "" ? 0 : palabras.length;
+  if (input == "") {
+    document.getElementById("conteo").textContent = "Es cero ";
+  } else {
+  let cantidad = input.trim().split(" ").length;
+  console.log(input.trim().split(" "));
   document.getElementById("conteo").textContent = "Cantidad de palabras: " + cantidad;
 }
+}
 
+
+/* 11 */
 function contarLet() {
   const input = document.getElementById("contarLetras").value;
   const texto = input.replace(/\s+/g, '').toLowerCase();
+  const conteo = {};
 
-  for (let letra of texto) {
-    if (/[a-záéíóúüñ]/i.test(letra)) {
-      conteo[letra] = (conteo[letra] || 0) + 1;
+  for (let i = 0; i < texto.length; i++) {
+    let letra = texto[i];
+    if (letra >= 'a' && letra <= 'z') {
+      if (conteo[letra]) {
+        conteo[letra]++;
+      } else {
+        conteo[letra] = 1;
+      }
     }
   }
 
   document.getElementById("contarLetra").textContent = "Conteo de letras: " + JSON.stringify(conteo);
+}
+/* revisar otra forma*/
+
+function eliminarCar() {
+  const input = document.getElementById("eliminarCaracteres").value;
+  let limpio = "";
+  const permitidos = "abcdefghijklmnopqrstuvwxyzáéíóúüñABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÜÑ0123456789";
+
+  for (let letra of input) {
+    if (permitidos.includes(letra)) {
+      limpio += letra; //concatenar//
+    }
+  }
+
+  document.getElementById("eliminarCaracteresEspeciales").textContent = "Texto limpio: " + limpio;
+}
+
+function capPalabras() {
+  const input = document.getElementById("capitalizarPalabras").value;
+  const mayusculas = input.split(" ");
+  let capitalizar = "";
+  for (let i = 0; i < mayusculas.length; i++) {
+    if (mayusculas[i].length > 0)
+    {
+      capitalizar += mayusculas[i][0].toUpperCase() + mayusculas[i].slice(1) + " ";
+    }
+  }
+  document.getElementById("capitalizar").textContent = "Texto convertido a mayúsculas: " + capitalizar;
+}
+
+ function inPalabras() {
+  const input = document.getElementById("invertirPalabras").value;
+  const inversion = input.split(" ").reverse().join(" ");
+  document.getElementById("invertir").textContent = "Texto invertido: " + inversion;
+ }
+
+/* function inPalabras() {
+  const input = document.getElementById("invertirPalabras").value;
+  const inversion = "";
+  for (let i =input.length - 1; i >= 0; i--) {
+    inversion += input[i];
+  }
+    document.getElementById("invertir").textContent = "Texto invertido: " + inversion;
+*/
+
+function elEspacios() {
+  const input = document.getElementById("eliminarEspacios").value;
+  const espacios = input.trim();
+  document.getElementById("eliminar").textContent = "Texto sin espacios: " + espacios;
+}
+
+function contOcurrencias() {
+  const texto = document.getElementById("contarOcurrencias").value;
+  const palabra = document.getElementById("palabraOcurrencias").value.trim();
+  let contador = 0;
+
+  const palabras = texto.split(" ");
+  for (let i = 0; i < palabras.length; i++) {
+    if (palabras[i].toLowerCase() === palabra.toLowerCase()) {
+      contador++;
+    }
+  }
+
+  document.getElementById("resultadoOcurrencias").textContent =
+    'La palabra "' + palabra + '" aparece ' + contador + " veces.";
+}
+
+ function buscarReemplazo() {
+  const input = document.getElementById("cadenaTexto").value;
+  const busqueda = document.getElementById("buscar").value.trim();
+  const reemplazar = document.getElementById("reemplazo").value.trim();
+  let contador = 0;
+
+if (busqueda === "") {
+  document.getElementById("resultadoReemplazo").textContent = "Introduce la palabra a buscar.";
+    return;
+  }
+
+  const palabras = input.split(" ");
+  for (let i = 0; i < palabras.length; i++) {
+    if (palabras[i].toLowerCase() === busqueda.toLowerCase()) {
+      palabras[i] = reemplazar;
+    }
+  }
+  const resultado = palabras.join(" ");
+  document.getElementById("resultadoReemplazo").textContent =
+   "Resultado: " + resultado;
+}
+
+function duplicadoCadena() {
+  const input = document.getElementById("duplicaCadena").value;
+  const cadenaa = input.split(" ");
+  const duplicado = [...new Set(cadenaa)];
+  document.getElementById("resultadoDuplicado").textContent = "Sin duplicados: " + duplicado.join(" ");
+}
+
+function mayusMinus() {
+  const input = document.getElementById("letrasMM").value;
+  let mayusculas = 0;
+  let minusculas = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    const letra = input[i];
+    if (letra >= 'A' && letra <= 'Z' || letra === 'Ñ' || letra === 'Á' || letra === 'É' || letra === 'Í' || letra === 'Ó' || letra === 'Ú' || letra === 'Ü') {
+      mayusculas++;
+    } else if (letra >= 'a' && letra <= 'z' || letra === 'ñ' || letra === 'á' || letra === 'é' || letra === 'í' || letra === 'ó' || letra === 'ú' || letra === 'ü') {
+      minusculas++;
+    }
+  }
+
+  document.getElementById("resultadoMayusMinus").textContent = "Conteo mayúsculas: " + mayusculas + " Conteo minúsculas: " + minusculas;
+
+}
+
+function convertirCamel (){
+  const input = document.getElementById("camelCase").value;
+
 }
