@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta Médico</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <fieldset>
+        <legend for="tipoconsulta">Tipo de consulta :</legend>
+        <input type="radio" name="tipoconsulta" id="" />General <br />
+        <input type="radio" name="tipoconsulta" id="" />Especialidad <br />
+        <input type="radio" name="tipoconsulta" id="" />Urgencias <br />
+      </fieldset>
+      <br />
+      <label for="fechahora">Selecciona Día y Hora:</label>
+      <input type="datetime-local" name="fechahora" id="" /> <br /><br />
+      <label for="sintomas">Describa los síntomas : </label
+      ><textarea name="sintomas" id=""></textarea><br />
+      <br />
+      <label for="documentos">Documentos médicos : </label>
+      <input type="file" name="documentos" id="" /><br />
+      <br />
+      <select name="selecmedico" id="">
+        <option value="medico1" name="selecmedico">Médico 1</option>
+        <option value="medico2" name="selecmedico">Médico 2</option>
+        <option value="medico3" name="selecmedico">Médico 3</option>
+        <option value="medico4" name="selecmedico">Médico 4</option>
+        <option value="medico5" name="selecmedico">Médico 5</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>

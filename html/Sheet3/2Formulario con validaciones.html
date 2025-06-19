@@ -24,20 +24,14 @@
         <label for="fechanacimiento">Fecha de nacimiento</label>
         <input type="date" id="fechanacimiento" name="fechanacimiento" required>
 
-        <label for="genero">Género:</label>
-        <select id="genero" name="genero" required>
-            <option value="" disabled selected>Seleccione una opción</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
+        <label for="genero">Seleccione genero</label>
+        <select name="" id="" class="genero">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
             <option value="otro">Otro</option>
-        </select>
-
-        <label for="terminos">
-            <input type="checkbox" id="terminos" name="terminos" required>
-            Acepto los términos y condiciones
-        </label>
-        <input type="submit" value="Enviar">    
-        
+        </select><br>
+        <input type="checkbox" required>Términos y Condiciones <br>
+        <input type="button" value="Enviar">
     </form>
 </body>
 </html>

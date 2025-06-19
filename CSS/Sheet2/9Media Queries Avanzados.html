@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"/>
+    <title>Ejercicio 9</title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+.item{
+    background-color: #c6c6c6;
+    width: 100%;
+    padding: 5px;
+}
+
+@media (max-width: 768px){
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+  </body>
+</html>

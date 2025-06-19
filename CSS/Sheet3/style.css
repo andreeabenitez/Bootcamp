@@ -1,0 +1,99 @@
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    header .links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    header .links a {
+      text-decoration: none;
+      color: #000;
+    }
+    .signup-btn {
+      padding: 8px 16px;
+      border: 1px solid #000;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #000;
+    }
+    .hero {
+      background: #f3f3f3;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 {
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #666;
+    }
+    .hero button {
+      padding: 12px 24px;
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .value-prop {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .value-prop p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #666;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .card {
+      width: 250px;
+      text-align: center;
+    }
+    .card .image {
+      background: #000;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 15px;
+    }
+    .card p {
+      margin-bottom: 10px;
+    }
+    .card a {
+      color: #000;
+      text-decoration: none;
+    }
+    footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+footer .columns {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+footer .columns div {
+  text-align: left;
+}
+footer p {
+  font-size: 14px;
+  color: #666;
+}

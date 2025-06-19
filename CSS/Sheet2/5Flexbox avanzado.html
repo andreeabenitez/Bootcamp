@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Ejercicio 5</title>
+    <style>
+      * {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.item{
+    background-color: #c6c6c6;
+    padding: 10px;
+}
+.item-flexible{
+    background-color: #c6c6c6;
+    flex-grow: 2;
+    padding: 10px;
+}
+    </style>  
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="item">Item 1</div>
+      <div class="item-flexible">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+  </body>
+</html>

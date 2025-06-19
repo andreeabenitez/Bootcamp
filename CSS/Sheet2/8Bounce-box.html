@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Ejercicio 8</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .bounce-box {
+        animation: bounce 0.5s infinite;
+      }
+      .bounce-box {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        50% {
+          transform: translate(0px, 50px);
+        }
+        100% {
+          transform: translate(0px, 0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bounce-box">Estoy rebotando</div>
+  </body>
+</html>
